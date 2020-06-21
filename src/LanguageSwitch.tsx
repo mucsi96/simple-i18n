@@ -1,23 +1,26 @@
-import React, { useCallback, ChangeEvent, FC } from "react";
-import { locale as selectedLocale, setLocale, locales } from "./messages";
+import React, { ChangeEvent, FC, useCallback } from "react";
+import { languages } from "./i18n/messages";
+import { getLanguage, setLanguage } from "./i18n/utils";
 
 export const LanguageSwitch: FC = () => {
-  const handleLocaleChange = useCallback(
-    ({ target: { value } }: ChangeEvent<HTMLSelectElement>) => setLocale(value),
+  const handleLanguageChange = useCallback(
+    ({ target: { value } }: ChangeEvent<HTMLSelectElement>) =>
+      setLanguage(value),
     []
   );
+  const selectedLanguage = getLanguage();
 
   return (
     <p>
       Language:{" "}
-      <select onChange={handleLocaleChange}>
-        {locales.map(locale => (
+      <select onChange={handleLanguageChange}>
+        {languages.map((language) => (
           <option
-            key={locale}
-            selected={locale === selectedLocale}
-            value={locale}
+            key={language}
+            selected={language === selectedLanguage}
+            value={language}
           >
-            {locale}
+            {language}
           </option>
         ))}
       </select>

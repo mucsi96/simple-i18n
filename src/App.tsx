@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { t } from "./messages";
+import { t } from "./i18n/messages";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { NameSwitch } from "./NameSwitch";
-
 import "./styles.css";
 
 const names = ["Tom", "Alex"];
