@@ -19,10 +19,6 @@ getLanguage() // -> 'fr'
 ```
 
 ```typescript
-getLanguage() // -> 'fr'
-```
-
-```typescript
 import en from "./messages_en.json"; // { "Greeting": "Hello {name}" }
 import fr from "./messages_fr.json"; // { "Greeting": "Bonjour {name}" }
 import { translate } from "./utils";
