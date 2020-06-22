@@ -16,7 +16,8 @@
   "devDependencies": {
     "@types/react": "16.9.38",
     "@types/react-dom": "16.9.8",
-    "typescript": "3.9.5"
+    "typescript": "3.9.5",
+    "@types/jest": "22.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,5 +1,18 @@
-export const getLanguage = (): string =>
-  window.sessionStorage.getItem("language") || "en";
+let cachedLanguage: string;
+
+export const getLanguage = (): string => {
+  if (cachedLanguage) {
+    return cachedLanguage;
+  }
+
+  const storedLanguage = window.sessionStorage.getItem("language");
+
+  if (storedLanguage) {
+    cachedLanguage = storedLanguage;
+  }
+
+  return storedLanguage || "en";
+};
 
 export const setLanguage = (language: string): void => {
   window.sessionStorage.setItem("language", language);
@@ -14,5 +27,9 @@ export const translate = (
   const messages = bundles[getLanguage()] || {};
   return Object.entries(params).reduce((result, [key, value]) => {
     return result.replace(new RegExp(`{${key}}`, "g"), value);
-  }, messages[id]);
+  }, messages[id] || (bundles["en"] && bundles["en"][id]) || id);
+};
+
+export const clearCache = () => {
+  cachedLanguage = "";
 };
