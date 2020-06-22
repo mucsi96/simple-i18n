@@ -1,4 +1,4 @@
-# react-simple-i18n
+# simple-i18n
 
 Minimalistic translation handling utility
 
