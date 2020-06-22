@@ -11,11 +11,22 @@ Minimalistic translation handling utility
 ## Usage
 
 ```typescript
+import { setLanguage } from "./utils";
+
 setLanguage("fr"); // -> sets SessionStorage and reloads the page
 ```
 
 ```typescript
+import { getLanguage } from "./utils";
+
 getLanguage() // -> 'fr'
+```
+
+```typescript
+import { translate } from "./utils";
+
+const bundles = { fr: { 'Greeting': 'Bonjour' } };
+translate(bundles, 'Greeting') // -> 'Bonjour'
 ```
 
 ```typescript
