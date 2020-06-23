@@ -26,6 +26,14 @@ We expect that the utility is can be used in both application and shared compone
 
 We can use also a global variable, but in case of SessionStorage there is less chance for variable collision. Also it's much easier to debug the state in Dev Tools.
 
+### Why reload the page on language change?
+
+As users change the language very rarely we can make the application simpler instead of optimizing for language change use case. With page reload we don't need to think what we have to refetch for newly selected language. We don't even need to listen for language change event. Also we can use the selected in plain javascript functions without the need to inject React / Redux state.
+
+### Why call a function "t"?
+
+Normally the translation function is the most frequently used function in application. It has to be used any time we want to display any text on the screen. So choosing a very short name can reduce the noise in source code. So developers can focus more on message keys instead of function name. One of the most popular internationalization-framework called i18next is also using "t" function for translation function.
+
 ## Usage
 
 ```typescript
