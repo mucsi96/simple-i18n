@@ -13,14 +13,14 @@ Minimalistic translation handling utility
 
 ### Why not store selected language and bundles in Redux or React state?
 
-Normally users are not changing language so frequently. Normally they do that once during initial application setup.
-So I see no point of optimizing the user experience around language change use case.
+Normally users are not changing language so frequently. Normally it happens once during initial application setup.
+So there is not much sense of optimizing the user experience around language change use case.
 Designing the application for language change use case by putting the selected language in React state or Redux makes a lot of complexity for basically no gain.
 It makes the translation handling tightly coupled to React / Redux which offten results in unnecessarly complex components.
 
 ### Why not store selected language just in a variable?
 
-We expect that the utility is can be used in both application and shared components. If by any chance the application is using a different version of utility the bundler will bundle two instances of utility. With that the selected language in application may differ from selected language in shared component.
+We expect that the utility to be used in both application and shared components. It possible that the application is using a different version of utility. In this case the bundler (Webpack) will bundle two instances of the utility. With that the selected language in application may differ from selected language in shared component.
 
 ### Why SessionStorage?
 
@@ -28,7 +28,7 @@ We can use also a global variable, but in case of SessionStorage there is less c
 
 ### Why reload the page on language change?
 
-As users change the language very rarely we can make the application simpler instead of optimizing for language change use case. With page reload we don't need to think what we have to refetch for newly selected language. We don't even need to listen for language change event. Also we can use the selected in plain javascript functions without the need to inject React / Redux state.
+As users change the language very rarely we can make the application simpler instead of optimizing for language change use case. With page reload we don't need to think what we have to refetch for newly selected language. We don't even need to listen for language change event. Also we can use the selected language and translate function in any javascript function without the need to inject React / Redux state.
 
 ### Why call a function "t"?
 
