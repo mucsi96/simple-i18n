@@ -6,7 +6,7 @@ Minimalistic translation handling utility
 
 - translation of keys
 - parameter interpolation
-- translation function available in any JavaScript function
+- translation function available in any JavaScript context or function
 
 ## FAQ
 
@@ -28,6 +28,10 @@ As users change the language very rarely we can make the application simpler ins
 ### Why call a function "t"?
 
 Normally the translation function is the most frequently used function in application. It has to be used any time we want to display any text on the screen. So choosing a very short name can reduce the noise in source code. So developers can focus more on message keys instead of function name. One of the most popular internationalization-framework called i18next is also using "t" function for translation function.
+
+### Why not use some popular package for translation handling
+
+This untility is only 618 bytes. And covers the needed use cases. In contrast i18next is 40.1KB, react-intl is 29.4KB.
 
 ## Usage
 
