@@ -4,10 +4,9 @@ Minimalistic translation handling utility
 
 ## Features
 
-- translation of keys based on SessionStorage
+- translation of keys
 - parameter interpolation
-- language caching on first succesful retrieval from SessionStorage
-- window reload on setting language for application logic simplification
+- translation function available in any JavaScript function
 
 ## FAQ
 
@@ -22,10 +21,6 @@ It makes the translation handling tightly coupled to React / Redux which offten 
 
 We expect that the utility to be used in both application and shared components. It possible that the application is using a different version of utility. In this case the bundler (Webpack) will bundle two instances of the utility. With that the selected language in application may differ from selected language in shared component.
 
-### Why SessionStorage?
-
-We can use also a global variable, but in case of SessionStorage there is less chance for variable collision. Also it's much easier to debug the state in Dev Tools.
-
 ### Why reload the page on language change?
 
 As users change the language very rarely we can make the application simpler instead of optimizing for language change use case. With page reload we don't need to think what we have to refetch for newly selected language. We don't even need to listen for language change event. Also we can use the selected language and translate function in any javascript function without the need to inject React / Redux state.
@@ -39,7 +34,7 @@ Normally the translation function is the most frequently used function in applic
 ```typescript
 import { setLanguage } from "./utils";
 
-setLanguage("fr"); // -> sets SessionStorage and reloads the page
+setLanguage("fr"); // -> sets language to 'fr' in local variable
 ```
 
 ```typescript

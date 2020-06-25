@@ -1,11 +1,13 @@
 import React, { ChangeEvent, FC, useCallback } from "react";
 import { languages } from "./i18n/messages";
-import { getLanguage, setLanguage } from "./i18n/utils";
+import { getLanguage } from "./i18n/utils";
 
 export const LanguageSwitch: FC = () => {
   const handleLanguageChange = useCallback(
-    ({ target: { value } }: ChangeEvent<HTMLSelectElement>) =>
-      setLanguage(value),
+    ({ target: { value } }: ChangeEvent<HTMLSelectElement>): void => {
+      localStorage.setItem("language", value);
+      window.location.reload();
+    },
     []
   );
   const selectedLanguage = getLanguage();
