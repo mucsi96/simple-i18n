@@ -7,6 +7,7 @@ Minimalistic translation handling utility
 - translation of keys
 - parameter interpolation
 - translation function available in any JavaScript context or function
+- type safety for translation key which can prevent typos
 
 ## FAQ
 
