@@ -1,6 +1,6 @@
 {
   "name": "react-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React and TypeScript example starter project",
   "keywords": [
     "typescript",
@@ -9,15 +9,15 @@
   ],
   "main": "src/index.tsx",
   "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
-    "@types/react": "16.9.38",
+    "@types/react": "16.9.43",
     "@types/react-dom": "16.9.8",
-    "typescript": "3.9.5",
-    "@types/jest": "22.2.3"
+    "typescript": "3.9.7",
+    "@types/jest": "26.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
