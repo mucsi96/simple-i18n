@@ -17,10 +17,6 @@ So there is not much sense of optimizing the user experience around language cha
 Designing the application for language change use case by putting the selected language in React state or Redux makes a lot of complexity for basically no gain.
 It makes the translation handling tightly coupled to React / Redux which offten results in unnecessary complex components.
 
-### Why not to store selected language just in a variable?
-
-We expect that the utility is used in both application and shared components. It is possible that the application is using a different version of utility. In this case the bundler (Webpack) will bundle two instances of the utility. With that the selected language in application may differ from selected language in the shared component.
-
 ### Why reload the page on a language change?
 
 As users change the language very rarely we can make the application simpler instead of optimizing for language change use case. With page reload we don't need to think what we have to refetch for newly selected language. We don't even need to listen for language change event. Also we can use the selected language and translate function in any javascript function without the need to inject React / Redux state.
