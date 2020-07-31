@@ -7,7 +7,8 @@ Minimalistic translation handling utility
 - translation of keys
 - parameter interpolation
 - translation function available in any JavaScript context or function
-- type safety for translation key which can prevent typos
+- type safety for translation keys which can prevent typos
+- very small size (618 bytes)
 
 ## FAQ
 
@@ -56,8 +57,11 @@ import en from "./messages_en.json"; // <- { "Greeting": "Hello {name}!" }
 import fr from "./messages_fr.json"; // <- { "Greeting": "Bonjour {name}!" }
 import { translate } from "./utils";
 
-export const t = (id: string, params: Record<string, string> = {}) =>
+type Id = keyof typeof en;
+
+export const t = (id: Id, params: Record<string, string> = {}) =>
   translate({ en, fr }, id, params);
 
 t("Greeting", { name: "Alex" }); // -> 'Bonjour Alex!'
+t("Greetink", { name: "Alex" }); // -> 'Argument of type '"Greetink"' is not assignable to parameter of type '"Greeting"'.'
 ```

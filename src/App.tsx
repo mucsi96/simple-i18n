@@ -13,7 +13,7 @@ export default function App() {
     <div className="App">
       <LanguageSwitch />
       <NameSwitch names={names} selectedName={name} onNameChange={setName} />
-      <h1>{t("Greeting", { name })}</h1>
+      <h1>{t("Greetin", { name })}</h1>
     </div>
   );
 }
