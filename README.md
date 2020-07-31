@@ -29,7 +29,7 @@ Normally the translation function is the most frequently used function in an app
 
 ### Why not to use some popular package for translation handling
 
-This utility is only 618 bytes and covers the needed use cases. In contrast i18next is 40.1KB, react-intl is 29.4KB.
+This utility is only 618 bytes and covers the needed use cases. In contrast [`i18next`](https://www.i18next.com/) is 40.1KB, [`react-intl`](https://formatjs.io/docs/react-intl/) is 29.4KB.
 
 ## Usage
 
